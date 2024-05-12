@@ -1,0 +1,11 @@
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: card
+      POSTGRES_USER: card
+      POSTGRES_DB: card
+    expose:
+      - "5430"
+    ports:
+      - "5430:5432"

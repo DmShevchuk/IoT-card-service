@@ -1,0 +1,35 @@
+server:
+  servlet:
+    context-path: /card/api/v1
+  port: 5006
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: card-service
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5430/card
+    driver-class-name: org.postgresql.Driver
+    username: card
+    password: card
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 70
+      idle-timeout: 600000
+      connection-test-query: SELECT 1
+  jpa:
+    properties:
+      hibernate:
+        event.merge.entity_copy_observer: allow
+        show_sql: false
+        use_sql_comments: false
+        format_sql: false
+        ddl-auto: none
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        order_inserts: true
+        order_updates: true
+        batch_versioned_data: true
+        jdbc:
+          batch_size: 50
