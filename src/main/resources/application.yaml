@@ -10,7 +10,7 @@ spring:
     name: card-service
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5430/card
+    url: jdbc:postgresql://182.20.0.23:5430/card
     driver-class-name: org.postgresql.Driver
     username: card
     password: card
